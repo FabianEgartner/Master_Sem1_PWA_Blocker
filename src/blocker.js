@@ -42,7 +42,6 @@ if (window.Worker) {
   sharedWorker.port.onmessage = (event) => {
     let message = event.data;
     if (message.guess) {
-        console.log("guess")
         signalIdleState(message.guess);   
     } else if (message.text) {
         if (message.text === "running") {
